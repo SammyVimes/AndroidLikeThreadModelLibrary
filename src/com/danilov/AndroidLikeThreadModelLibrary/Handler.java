@@ -152,7 +152,7 @@ public class Handler {
         if (delayMillis < 0) {
             delayMillis = 0;
         }
-        return sendMessageAtTime(msg, System.nanoTime() + delayMillis);
+        return sendMessageAtTime(msg, System.currentTimeMillis() + delayMillis);
     }
     
     public boolean sendMessageAtTime(Message msg, long uptimeMillis) {
@@ -202,7 +202,7 @@ public class Handler {
     }
     
     public final void dump(String prefix) {
-        Utils.log(prefix + this + " @ " + System.nanoTime());
+        Utils.log(prefix + this + " @ " + System.currentTimeMillis());
         if (mLooper == null) {
         	Utils.log(prefix + "looper uninitialized");
         }

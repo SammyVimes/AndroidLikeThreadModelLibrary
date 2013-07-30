@@ -138,6 +138,10 @@ public class Message {
         return ((flags & FLAG_IN_USE) == FLAG_IN_USE);
     }
     
+    void markInUse() {
+        flags |= FLAG_IN_USE;
+    }
+    
     public void recycle() {
         clearForRecycle();
 
@@ -166,7 +170,7 @@ public class Message {
     }
     
     public String toString() {
-        return Long.toString(System.nanoTime());
+        return Long.toString(System.currentTimeMillis());
     }
     
     String toString(long now) {
