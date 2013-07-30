@@ -3,10 +3,10 @@ package com.danilov.AndroidLikeThreadModelLibrary;
 public class Message {
 
 	
-	public Object object;
-	public int what;
-	public int arg1;
-	public int arg2;
+    public Object object;
+    public int what;
+    public int arg1;
+    public int arg2;
 	
 	static final int FLAG_IN_USE = 1 << 0;
 	static final int FLAG_ASYNCHRONOUS  = 1 << 1;
