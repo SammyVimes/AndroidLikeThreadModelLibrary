@@ -9,15 +9,15 @@ public class Message {
     public int arg2;
 	
     static final int FLAG_IN_USE = 1 << 0;
-	static final int FLAG_ASYNCHRONOUS  = 1 << 1;
-	int flags;
-	long when;
-	Handler target;
-	Runnable callback;
-	Message next;
+    static final int FLAG_ASYNCHRONOUS  = 1 << 1;
+    int flags;
+    long when;
+    Handler target;
+    Runnable callback;
+    Message next;
 	
-	private static final Object sPoolSync = new Object();
-	private static Message sPool;
+    private static final Object sPoolSync = new Object();
+    private static Message sPool;
     private static int sPoolSize = 0;
 	
     private static final int MAX_POOL_SIZE = 50;
@@ -44,6 +44,13 @@ public class Message {
         m.target = original.target;
         m.callback = original.callback;
         
+        return m;
+    }
+    
+    public static Message obtain(Handler h) {
+        Message m = obtain();
+        m.target = h;
+
         return m;
     }
     
