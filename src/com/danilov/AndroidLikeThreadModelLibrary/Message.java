@@ -1,7 +1,5 @@
 package com.danilov.AndroidLikeThreadModelLibrary;
 
-import java.util.Calendar;
-
 public class Message {
 
 	
