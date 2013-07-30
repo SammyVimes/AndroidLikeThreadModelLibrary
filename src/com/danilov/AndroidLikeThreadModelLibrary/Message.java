@@ -8,7 +8,7 @@ public class Message {
     public int arg1;
     public int arg2;
 	
-	static final int FLAG_IN_USE = 1 << 0;
+    static final int FLAG_IN_USE = 1 << 0;
 	static final int FLAG_ASYNCHRONOUS  = 1 << 1;
 	int flags;
 	long when;
